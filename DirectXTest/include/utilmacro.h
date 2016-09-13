@@ -2,11 +2,11 @@
 #define DIRECTTEST_UTIILMACRO_H_
 
 #ifndef V
-#define V(x) {hr = x;}
+#define V(x) {long hr = x;}
 #endif // !V
 
 #ifndef V_RETURN
-#define V_RETURN(x) { hr = x; if(FAILED(hr)){ return hr; } }
+#define V_RETURN(x) {long hr = x; if(FAILED(hr)){ return hr; } }
 #endif // !V_RETURN
 
 #ifndef SAFE_DELETE

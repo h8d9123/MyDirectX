@@ -7,12 +7,13 @@
 //
 // Copyright (c) Microsoft Corporation. All rights reserved.
 //-----------------------------------------------------------------------------
+
 #include <d3d9.h>
 #pragma warning( disable : 4996 ) // disable deprecated warning 
 #include <strsafe.h>
 #pragma warning( default : 4996 )
 
-
+#include "test.h"
 
 
 //-----------------------------------------------------------------------------
@@ -79,6 +80,7 @@ VOID Cleanup()
 
 	if (g_pD3D != NULL)
 		g_pD3D->Release();
+	
 }
 
 
@@ -100,7 +102,8 @@ VOID Render()
 	if (SUCCEEDED(g_pd3dDevice->BeginScene()))
 	{
 		// Rendering of scene objects can happen here
-
+		//me: does some work to render
+		myd3d::MyRender(g_pd3dDevice);
 		// End the scene
 		g_pd3dDevice->EndScene();
 	}
